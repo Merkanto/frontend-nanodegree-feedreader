@@ -90,11 +90,16 @@ $(function() {
             beforeEach(function (done) {
                 loadFeed(0, done);
             });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+
+            it('should loadFeed has a single .entry at least in the .feed container', function () {
+                expect(document.getElementsByClassName("feed entry").length).toBeGreaterThan(0);
+            });
+        })
+            /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        })
+
 }());
