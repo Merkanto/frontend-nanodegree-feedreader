@@ -62,7 +62,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it("should be menu is hidden by default", function () {
-            expect(document.getElementsByTagName("body").hasClass("menu-hidden")).toBe(true);
+            expect($("body").hasClass("menu-hidden")).toBe(true);
         });
 
          /* TODO: Write a test that ensures the menu changes
@@ -71,11 +71,11 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it("should the menu icon is visible on click", function () {
-            document.getElementsByClassName("menu-icon-link").click();
-            expect(document.getElementsByTagName("body").hasClass("menu-hidden")).toBe(false);
+            $(".menu-icon-link").click();
+            expect($("body").hasClass("menu-hidden")).toBe(false);
 
-            document.getElementsByClassName("menu-icon-link").click();
-            expect(document.getElementsByTagName("body").hasClass("menu-hidden")).toBe(true);
+            $(".menu-icon-link").click();
+            expect($("body").hasClass("menu-hidden")).toBe(true);
         });
     })
 
@@ -92,7 +92,7 @@ $(function() {
             });
 
             it('should loadFeed has a single .entry at least in the .feed container', function () {
-                expect(document.getElementsByClassName("feed entry").length).toBeGreaterThan(0);
+                expect($(".feed .entry").length).toBeGreaterThan(0);
             });
         })
             /* TODO: Write a new test suite named "New Feed Selection" */
@@ -106,9 +106,9 @@ $(function() {
             });
 
             it('should be new feed is loaded', function (done) {
-                let newFeed = document.getElementsByClassName("feed").html();
+                let newFeed = $(".feed").html();
                 loadFeed(1, function () {
-                    expect(document.getElementsByClassName("feed").html()).not.toEqual(newFeed);
+                    expect($("f.eed").html()).not.toEqual(newFeed);
                     done();
                 })
             });
